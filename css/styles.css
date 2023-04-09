@@ -47,7 +47,7 @@ body {
 	}
 }
 
-.icons-social i {
+.icons-social img {
 	font-size: 3em;
 }
 
@@ -66,18 +66,34 @@ main {
 	font-family: 'Reem Kufi', sans-serif;
 	font-size: 3.75em;
 	font-weight: 600;
-	color: #1b1b1b;
+	/* color: #1b1b1b; */
+	background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */		
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }
 
 .tagline {
 	font-size: 1.5rem;
 	margin: 1.5rem 0;
 	font-weight: 100;
-	color: #1b1b1b;
+	background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
 }
 
-.icons-social i {
+.icons-social img {
 	padding: 10px;
+	background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	width: 2.65rem;
+	height: 2.65rem;
 }
 
 .icons-social a {
