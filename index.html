@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Yogesh Drall | Software Engineer</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="favicon_io/site.webmanifest">
+
+  <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
+  <script src="./js/threejsanimation.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="canvas"></div>
+    <div class="inner">
+      <div class="intro"></div>
+      <div class="tagline">Software Engineer | Backend Dev</div>
+      <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
+      <div class="icons-social">
+        <a target="_blank" href="https://github.com/ydrall">
+          <i class="fa fa-github" aria-hidden="true" title="Github"></i>
+          <!-- <span class="sr-only">Github</span> -->
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/ydrall">
+          <i class="fa fa-linkedin" aria-hidden="true" title="LinkedIn"></i>
+          <!-- <span class="sr-only">LinkedIn</span> -->
+        </a>
+        <a target="_blank" href="https://blog.yogeshdrall.in">
+          <i class="fa fa-rss" aria-hidden="true" title="My Blog"></i>
+          <!-- <span class="sr-only">My blog</span> -->
+        </a>
+        <a target="_blank" href="https://stackoverflow.com/users/4150668/ydrall">
+          <i class="fa fa-stack-overflow" aria-hidden="true" title="StackOverflow"></i>
+          <!-- <span class="sr-only">StackOverflow</span> -->
+        </a>
+        <a target="_blank" href="https://twitter.com/yogeshdrall">
+          <i class="fa fa-twitter" aria-hidden="true" title="Twitter"></i>
+          <!-- <span class="sr-only">Twitter</span> -->
+        </a>
+      </div>
+    </div>
+  </main>
+  <script>
+    new TypeIt(".intro", {
+      strings: "Hi, I'm Yogesh Drall.",
+      speed: 60,
+      loop: false,
+      waitUntilVisible: true,
+      afterComplete: function (instance) {
+        instance.destroy();
+      }
+    }).go();
+  </script>
+</body>
+
+</html>
