@@ -1,6 +1,15 @@
-var renderer, scene, camera, composer, circle, skelet, particle;
+var renderer, scene, camera, composer, circle, skelet, particle, particlesCounts = 100;
 
 window.onload = function () {
+  fetch("https://raw.githubusercontent.com/YDrall/my-landing-page/contrib/config.json").then((response) => response.json())
+    .then((json) => {
+      particlesCounts = JSON.parse(json?.contrib)?.viewer?.contributionsCollection?.contributionCalendar?.totalContributions;
+    })
+    .catch(err => { console.log(err) })
+    .finally(() => start());
+}
+
+function start() {
   init();
   animate();
 }

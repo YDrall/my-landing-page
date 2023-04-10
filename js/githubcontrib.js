@@ -1,1 +1,0 @@
-var particlesCounts = 1000;
