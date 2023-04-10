@@ -1,0 +1,25 @@
+# It fetches my github contirubiont counts and pushes it to a gcp bucket so that it can be shown as particles on my landing site www.yogeshdrall.in
+ 
+name:
+  Contribution Count Cron Job
+ 
+  # Controls when the workflow will run
+on:
+  # Triggers the workflow every 5 minutes
+  schedule:
+    - cron: "0 * * * *" 
+jobs:
+  cron:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+ 
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Get contributions
+      - uses: octokit/graphql-action@v2.x
+        id: get_contribution_count
+        with:
+          query: query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      - run: "echo 'latest release: ${{ steps.get_latest_release.outputs.data }}'"
