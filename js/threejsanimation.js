@@ -30,7 +30,7 @@ function init() {
     shading: THREE.FlatShading
   });
 
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < particlesCounts; i++) {
     var mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
     mesh.position.multiplyScalar(90 + (Math.random() * 700));
