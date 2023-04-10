@@ -25,4 +25,9 @@ jobs:
           query: query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-      - run: "echo 'Contributino count data: ${{ steps.get_contribution_count.outputs.data }}'"
+      - name: Update my-file.json description
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: config.json
+          field: contrib
+          value: ${{ steps.get_contribution_count.outputs.data }}
