@@ -13,16 +13,41 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 * * * *" 
+
 jobs:
   cron:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: octokit/graphql-action@v2.x
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+            ref: contrib
+      - name: Checkout code
+        uses: octokit/graphql-action@v2.x
         id: get_contribution_count
         with:
           query: query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-      - run: "echo 'Contributino count data: ${{ steps.get_contribution_count.outputs.data }}'"
+      - name: Update github contribution data
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: config.json
+          field: contrib
+          value: ${{ steps.get_contribution_count.outputs.data }}
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "cron: udpating github contributions"
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ github.token }}
+          branch: contrib
+
