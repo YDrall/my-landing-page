@@ -35,7 +35,7 @@ jobs:
         with:
           file: config.json
           field: contrib
-          value: ${{ steps.get_contribution_count.outputs.data.viewer.contributionsCollection.contributionCalendar.totalContributions }}
+          value: ${{ steps.get_contribution_count.outputs.data }}
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
