@@ -25,4 +25,4 @@ jobs:
           query: query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-      - run: "echo 'latest release: ${{ steps.get_latest_release.outputs.data }}'"
+      - run: "echo 'Contributino count data: ${{ steps.get_contribution_count.outputs.data }}'"
