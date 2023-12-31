@@ -49,13 +49,13 @@ jobs:
           value: ${{ steps.get_contribution_count.outputs.data }}
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "yogeshdrall7874@github.com"
+          git config --local user.name "Yogesh Drall"
           git add -A
           git commit --allow-empty -m "cron: udpating github contributions"
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           branch: main
 
