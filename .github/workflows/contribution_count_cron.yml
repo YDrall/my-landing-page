@@ -44,7 +44,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m --allow-empty "cron: udpating github contributions"
+          git commit --allow-empty -m "cron: udpating github contributions"
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
