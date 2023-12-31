@@ -49,8 +49,8 @@ jobs:
           value: ${{ steps.get_contribution_count.outputs.data }}
       - name: Commit files
         run: |
-          git config --local user.email "yogeshdrall7874@github.com"
-          git config --local user.name "Yogesh Drall"
+          git config --local user.email "yogeshdrall7874@gmail.com"
+          git config --local user.name "ydrall"
           git add -A
           git commit --allow-empty -m "cron: udpating github contributions"
       - name: Push changes
