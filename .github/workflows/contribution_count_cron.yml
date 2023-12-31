@@ -24,8 +24,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-            ref: contrib
       - name: Checkout code
         uses: octokit/graphql-action@v2.x
         id: get_contribution_count
@@ -49,5 +47,4 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ github.token }}
-          branch: contrib
 
